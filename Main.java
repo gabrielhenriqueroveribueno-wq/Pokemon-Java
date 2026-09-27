@@ -318,17 +318,7 @@ public class Main {
                         continue; 
                     }
 
-                    Ataque ataqueInimigo;
-                    
-                    // Math.random() gera um número decimal entre 0.0 e 0.99. 
-                    // Se o número for maior que 0.5 (ou seja, 50% de probabilidade), cai no bloco 'if'.
-                    if (Math.random() > 0.5) {
-                        // O inimigo decide usar o ataque forte (elemental).
-                        ataqueInimigo = selvagemAtual.getAtaqueElemental();
-                    } else {
-                        // Caso contrário (os outros 50%), o inimigo usa o ataque fraco (Investida).
-                        ataqueInimigo = selvagemAtual.getAtaqueNormal();
-                    }
+                    Ataque ataqueInimigo = selvagemAtual.getAtaqueElemental();
                     
                     System.out.println("\nO " + selvagemAtual.getNome() + " usou " + ataqueInimigo.getNome() + "!");
                     
@@ -356,7 +346,7 @@ public class Main {
                         if (capturou) {
                             batalhaRodando = false; 
                         } else {
-                            Ataque ataqueInimigo = (Math.random() > 0.5) ? selvagemAtual.getAtaqueElemental() : selvagemAtual.getAtaqueNormal();
+                            Ataque ataqueInimigo = selvagemAtual.getAtaqueElemental();
                             
                             System.out.println("\nEnquanto você se lamentava pela Pokébola perdida, o " + selvagemAtual.getNome() + " contra-atacou!");
                             System.out.println("O " + selvagemAtual.getNome() + " usou " + ataqueInimigo.getNome() + "!");
@@ -368,7 +358,7 @@ public class Main {
                                 System.out.println("O seu " + meuPokemon.getNome() + " desmaiou!");
                                 if (jogador.temPokemonVivo()) {
                                     System.out.println("Você precisa escolher outro Pokémon no próximo turno.");
-                                    acao = 3; // Força a troca.
+                                    acao = 3; 
                                 } else {
                                     System.out.println("Fim de jogo.");
                                     jogador.exibirPokedexFinal();
