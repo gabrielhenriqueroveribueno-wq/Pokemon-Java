@@ -2,6 +2,7 @@ import java.util.ArrayList;
 import java.util.List; 
 import java.util.Scanner; 
 
+// 1. CLASSE ATAQUE: É o "molde" para criar os golpes do jogo.
 class Ataque {
     
     private String nome; 
@@ -22,6 +23,7 @@ class Ataque {
     public String getTipo() { return tipo; } 
 }
 
+// 2. SUPERCLASSE POKEMON: É a classe "Pai".
 abstract class Pokemon {
     
     protected String nome; 
@@ -61,6 +63,7 @@ abstract class Pokemon {
     public abstract void apresentar();
 }
 
+// 3. SUBCLASSES DE POKEMON: As classes "Filhas" que herdam a estrutura do Pai.
 class PokemonFogo extends Pokemon {
 
     public PokemonFogo(String nome, int hp, Ataque ataque) {
@@ -96,6 +99,7 @@ class PokemonPlanta extends Pokemon {
     }
 }
 
+// 4. CLASSE TREINADOR: É o gestor da sessão do jogador.
 class Treinador {
     private String nome; 
     private int pokebolas; 
@@ -179,7 +183,7 @@ class Treinador {
     }
 }
 
-
+// 5. CLASSE PRINCIPAL
 public class Main {
     
     public static int calcularDanoComVantagem(Ataque ataqueUsado, Pokemon defensor) {
